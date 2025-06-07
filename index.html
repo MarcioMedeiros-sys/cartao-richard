@@ -7,6 +7,20 @@
   <title>Cartão do Richard</title>
   <link rel="stylesheet" href="style.css">
 </head>
+  <script>
+  document.querySelector("form").addEventListener("submit", function (e) {
+    e.preventDefault(); // evita o recarregamento da página
+
+    const local = document.getElementById("local").value.trim();
+    const telefone = document.getElementById("telefone").value.trim();
+
+    const msg = `Olá Richard! Gostaria de agendar um horário.%0ALocal de saída: ${encodeURIComponent(local)}%0ATelefone: ${encodeURIComponent(telefone)}`;
+    const numero = "5584997081336";
+
+    window.open(`https://wa.me/${numero}?text=${msg}`, "_blank");
+  });
+</script>
+
 <body>
   <div class="card">
     <img src="richard_sao_joao.png" alt="Richard" class="profile-pic" />
